@@ -89,7 +89,7 @@ const Topmenu = ({ onClick, onClick2, darkLigh, onDark, onLight, setSettings, se
 
                 {/* Settings */}
 
-                <div className=" gap-[30px] ">
+                <div className=" gap-[30px] flex items-center ">
 
                     <button
                         onClick={onClick}
@@ -133,27 +133,27 @@ const Topmenu = ({ onClick, onClick2, darkLigh, onDark, onLight, setSettings, se
 
                         <h1
                             className="
-                            text-[25px]
-                            mt-[20px]
-                            ml-[20px]
-                            text-slate-400
-                            font-semibold
-                            uppercase
+                                text-[25px]
+                                mt-[20px]
+                                ml-[20px]
+                                text-slate-400
+                                font-semibold
+                                uppercase
                         "
                         >Settings</h1>
 
                         <div
                             className="
-                        h-[60px]
-                        px-[10px]
-                        mt-[10px]
-                        border-t 
-                        border-b
-                        w-[100%]
-                        flex 
-                        items-center
-                        justify-between
-                    "
+                                h-[60px]
+                                px-[10px]
+                                mt-[10px]
+                                border-t 
+                                border-b
+                                w-[100%]
+                                flex 
+                                items-center
+                                justify-between
+                            "
                         >
 
                             {darkLigh ? (
@@ -203,17 +203,17 @@ const Topmenu = ({ onClick, onClick2, darkLigh, onDark, onLight, setSettings, se
 
                         <div
                             className={`
-                        h-[60px]
-                        border-t
-                        w-[100%]
-                        mt-[10px]
-                        flex
-                        items-center
-                        justify-between
-                        px-[10px]
-                        font-semibold
-                        ${darkLigh ? "text-white" : "text-slate-500"}
-                        `}
+                            h-[60px]
+                            border-t
+                            w-[100%]
+                            mt-[10px]
+                            flex
+                            items-center
+                            justify-between
+                            px-[10px]
+                            font-semibold
+                            ${darkLigh ? "text-white" : "text-slate-500"}
+                            `}
                         >
                             <span className=" text-[20px] ">Exit</span>
                             <button onClick={() => navigate(-1)} className=" fas fa-door-open text-[30px] " />
