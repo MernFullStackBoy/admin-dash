@@ -7,13 +7,24 @@ const useFetch = (url: string) => {
 
     const [error, setError] = useState<boolean>(false)
 
-    useEffect(() => {
+    async function getData() {
         setLoading(true)
-        fetch(url)
-            .then(req => req.json)
-            .then(data => setData([data]))
-            .catch(() => setError(true))
-            .finally(() => setLoading(false))
+        const req = await fetch(url)
+
+        if (req.status === 200) {
+            const data = await req.json()
+
+            setData([data])
+
+            setLoading(false)
+        } else {
+            setLoading(false)
+            setError(true)
+        }
+    }
+
+    useEffect(() => {
+        getData()
     }, [url])
 
     return { data, error, loading }
