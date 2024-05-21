@@ -5,6 +5,7 @@ import Leftmenu from "./components/Screens/Leftmenu"
 import Topmenu from "./components/Screens/Topmenu"
 import Notification from "./components/Modals/Notification"
 import VisitorsModal from "./components/Modals/VisitorsModal"
+import ResponeTopMenu from "./components/Screens/ResponeBottomMenu"
 
 const App = () => {
 
@@ -56,9 +57,20 @@ const App = () => {
         />
         {visitors && (
           <VisitorsModal
+            isDark={dark}
             onShow={() => setVisitors(false)}
           />
         )}
+
+        <ResponeTopMenu
+          settings={settings}
+          setSettings={() => setSettings(prev => !prev)}
+          onClick={() => setmessageshow(true)}
+          onClick2={() => setNotiShow(true)}
+          darkLigh={dark}
+          onDark={() => setDark(false)}
+          onLight={() => setDark(true)}
+        />
       </div>
     </div>
   )
